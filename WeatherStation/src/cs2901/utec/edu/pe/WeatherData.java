@@ -36,11 +36,13 @@ public class WeatherData implements Subject {
     public void measurementsChanged() throws InterruptedException {
         Random rd = new Random();
     while(true){
-
+        double randomValue = 1.0 + (80.0 - 1.0) * rd.nextDouble();
         Thread.sleep(4000);
-        setTemperature(rd.nextDouble());
-        setHumidity(rd.nextDouble());
-        setPressure(rd.nextDouble());
+        setTemperature(randomValue);
+        randomValue = 1.0 + (80.0 - 1.0) * rd.nextDouble();
+        setHumidity(randomValue);
+        randomValue = 1.0 + (80.0 - 1.0) * rd.nextDouble();
+        setPressure(randomValue);
     }
     }
 
