@@ -4,5 +4,5 @@ public interface Subject {
     void registerObserver(Observer observer);
     void removeObserver();
     void notifyObservers();
-    void measurementsChanged();
+    void measurementsChanged() throws InterruptedException;
 }

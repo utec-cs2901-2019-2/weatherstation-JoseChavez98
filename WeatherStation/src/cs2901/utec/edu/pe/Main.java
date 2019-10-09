@@ -11,9 +11,11 @@ public class Main {
     new CurrentCoditions(wd);
     new StatisticsDisplay(wd);
 
-    wd.setHumidity(12.9);
-    wd.setPressure(13.6);
-    wd.setTemperature(13.45);
+        try {
+            wd.measurementsChanged();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
 
     }
 }

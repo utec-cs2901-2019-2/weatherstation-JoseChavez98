@@ -2,6 +2,7 @@ package cs2901.utec.edu.pe;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 public class WeatherData implements Subject {
 
@@ -32,8 +33,15 @@ public class WeatherData implements Subject {
     }
 
     @Override
-    public void measurementsChanged(){
+    public void measurementsChanged() throws InterruptedException {
+        Random rd = new Random();
+    while(true){
 
+        Thread.sleep(4000);
+        setTemperature(rd.nextDouble());
+        setHumidity(rd.nextDouble());
+        setPressure(rd.nextDouble());
+    }
     }
 
     public List<Observer> getList() {
